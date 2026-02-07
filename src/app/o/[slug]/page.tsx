@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -60,6 +61,16 @@ export default async function OfferPage({ params, searchParams }: PageProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-sky-50 to-white">
       <main className="mx-4 w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+        <div className="mb-4 flex justify-center">
+          <Image 
+            src="/accacia-logo.svg" 
+            alt="ACCACIA" 
+            width={160} 
+            height={53}
+            priority
+          />
+        </div>
+        
         <div className="mb-6 text-center">
           <span className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-700">
             Ofertă specială

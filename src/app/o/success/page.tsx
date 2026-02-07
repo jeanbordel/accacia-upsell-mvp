@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import Image from "next/image";
 
 interface PageProps {
   searchParams: Promise<{ orderId?: string; session_id?: string }>;
@@ -21,6 +22,15 @@ export default async function SuccessPage({ searchParams }: PageProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-green-50 to-white">
       <main className="mx-4 w-full max-w-md rounded-2xl bg-white p-8 shadow-lg text-center">
+        <div className="mb-4 flex justify-center">
+          <Image 
+            src="/accacia-logo.svg" 
+            alt="ACCACIA" 
+            width={160} 
+            height={53}
+            priority
+          />
+        </div>
         <div className="mb-4 text-5xl">✅</div>
         <h1 className="mb-2 text-2xl font-bold text-gray-900">
           Mulțumim pentru plată!

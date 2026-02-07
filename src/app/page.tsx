@@ -1,11 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-sky-50 to-white">
       <main className="mx-4 w-full max-w-lg text-center">
-        <div className="mb-8">
-          <span className="text-5xl">🏨</span>
+        <div className="mb-8 flex justify-center">
+          <Image 
+            src="/accacia-logo.svg" 
+            alt="ACCACIA" 
+            width={240} 
+            height={80}
+            priority
+          />
         </div>
         <h1 className="mb-3 text-4xl font-bold tracking-tight text-gray-900">
           ACCACIA Upsell

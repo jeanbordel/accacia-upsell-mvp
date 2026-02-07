@@ -1,0 +1,26 @@
+<svg width="240" height="80" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Golden acacia branch -->
+  <g transform="translate(30, 10)">
+    <!-- Curved branch -->
+    <path d="M 5 40 Q 15 35 25 33 Q 35 31 45 30 Q 55 29 65 30" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Leaves on branch -->
+    <ellipse cx="12" cy="30" rx="6" ry="12" fill="#D4AF37" transform="rotate(-25 12 30)"/>
+    <ellipse cx="22" cy="26" rx="7" ry="13" fill="#D4AF37" transform="rotate(-15 22 26)"/>
+    <ellipse cx="32" cy="24" rx="8" ry="14" fill="#D4AF37" transform="rotate(-5 32 24)"/>
+    <ellipse cx="42" cy="23" rx="8" ry="14" fill="#D4AF37" transform="rotate(5 42 23)"/>
+    <ellipse cx="52" cy="24" rx="7" ry="13" fill="#D4AF37" transform="rotate(15 52 24)"/>
+    <ellipse cx="62" cy="26" rx="6" ry="12" fill="#D4AF37" transform="rotate(25 62 26)"/>
+    
+    <!-- Smaller leaves below -->
+    <ellipse cx="18" cy="38" rx="5" ry="10" fill="#D4AF37" transform="rotate(-35 18 38)"/>
+    <ellipse cx="28" cy="35" rx="6" ry="11" fill="#D4AF37" transform="rotate(-20 28 35)"/>
+    <ellipse cx="38" cy="33" rx="6" ry="11" fill="#D4AF37" transform="rotate(-10 38 33)"/>
+    <ellipse cx="48" cy="33" rx="6" ry="11" fill="#D4AF37" transform="rotate(10 48 33)"/>
+    <ellipse cx="58" cy="35" rx="5" ry="10" fill="#D4AF37" transform="rotate(35 58 35)"/>
+  </g>
+  
+  <!-- ACCACIA text -->
+  <text x="10" y="68" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#D4AF37" letter-spacing="2">ACCACIA</text>
+  <text x="210" y="68" font-family="Georgia, serif" font-size="16" font-weight="400" fill="#D4AF37">®</text>
+</svg>

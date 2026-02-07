@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 const ADMIN_COOKIE = "admin_auth";
 
@@ -27,9 +28,16 @@ export default async function AdminLayout({
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <nav className="border-b bg-white px-6 py-3">
         <div className="mx-auto flex max-w-5xl items-center justify-between">
-          <span className="text-lg font-bold text-gray-900">
-            ACCACIA Admin
-          </span>
+          <div className="flex items-center gap-2">
+            <Image 
+              src="/accacia-logo.svg" 
+              alt="ACCACIA" 
+              width={120} 
+              height={40}
+              priority
+            />
+            <span className="text-sm font-medium text-gray-600">Admin</span>
+          </div>
           <div className="flex gap-4 text-sm">
             <a
               href="/admin/kpi"

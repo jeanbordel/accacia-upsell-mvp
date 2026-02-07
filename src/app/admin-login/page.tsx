@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 async function loginAction(formData: FormData) {
   "use server";
@@ -34,6 +35,15 @@ export default async function LoginPage() {
         action={loginAction}
         className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg"
       >
+        <div className="mb-6 flex justify-center">
+          <Image 
+            src="/accacia-logo.svg" 
+            alt="ACCACIA" 
+            width={180} 
+            height={60}
+            priority
+          />
+        </div>
         <h1 className="mb-6 text-center text-xl font-bold text-gray-900">
           Admin Login
         </h1>
