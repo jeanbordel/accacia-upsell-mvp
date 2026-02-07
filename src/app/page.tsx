@@ -5,18 +5,16 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-sky-50 to-white">
       <main className="mx-4 w-full max-w-lg text-center">
-        <div className="mb-8 flex justify-center">
+        <div className="mb-6 flex justify-center">
           <Image 
             src="/accacia-logo.svg" 
             alt="ACCACIA" 
-            width={240} 
-            height={80}
+            width={200} 
+            height={125}
             priority
+            className="h-auto w-48"
           />
         </div>
-        <h1 className="mb-3 text-4xl font-bold tracking-tight text-gray-900">
-          ACCACIA Upsell
-        </h1>
         <p className="mb-8 text-lg text-gray-600">
           Platformă de upsell pentru hoteluri — oferte personalizate prin QR
           code, plăți online instant.
