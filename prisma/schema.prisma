@@ -20,6 +20,7 @@ enum PaymentProvider {
 
 enum EventType {
   QR_SCAN
+  PAGE_VIEW
   PAYMENT_SUCCESS
   PAYMENT_FAILED
 }
@@ -42,7 +43,8 @@ model Screen {
   qrSlug    String   @unique
   createdAt DateTime @default(now())
 
-  hotel Hotel @relation(fields: [hotelId], references: [id])
+  hotel  Hotel   @relation(fields: [hotelId], references: [id])
+  orders Order[]
 }
 
 model Offer {
@@ -55,7 +57,8 @@ model Offer {
   isActive    Boolean  @default(true)
   createdAt   DateTime @default(now())
 
-  hotel Hotel @relation(fields: [hotelId], references: [id])
+  hotel  Hotel   @relation(fields: [hotelId], references: [id])
+  orders Order[]
 }
 
 model Order {
@@ -70,7 +73,10 @@ model Order {
   currency    String
   createdAt   DateTime        @default(now())
 
-  hotel Hotel @relation(fields: [hotelId], references: [id])
+  hotel  Hotel   @relation(fields: [hotelId], references: [id])
+  screen Screen? @relation(fields: [screenId], references: [id])
+  offer  Offer?  @relation(fields: [offerId], references: [id])
+  events Event[]
 }
 
 model Event {
@@ -78,8 +84,11 @@ model Event {
   hotelId   String
   screenId  String?
   offerId   String?
+  orderId   String?
   type      EventType
+  data      Json?
   createdAt DateTime  @default(now())
 
-  hotel Hotel @relation(fields: [hotelId], references: [id])
+  hotel Hotel  @relation(fields: [hotelId], references: [id])
+  order Order? @relation(fields: [orderId], references: [id])
 }
