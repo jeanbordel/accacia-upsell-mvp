@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getStripe } from "@/lib/stripe";
+import { logger } from "@/lib/logger";
 
 /**
  * POST /api/checkout
@@ -25,12 +26,22 @@ export async function POST(req: NextRequest) {
     }
 
     if (!offerId) {
+      logger.warn("Checkout missing offerId");
       return NextResponse.json({ error: "offerId required" }, { status: 400 });
     }
 
     const offer = await prisma.offer.findUnique({ where: { id: offerId } });
     if (!offer) {
+      logger.warn("Checkout: offer not found", { offerId });
       return NextResponse.json({ error: "offer not found" }, { status: 404 });
+    }
+
+    if (!offer.isActive) {
+      logger.warn("Checkout: offer is not active", { offerId });
+      return NextResponse.json(
+        { error: "This offer is no longer available" },
+        { status: 410 }
+      );
     }
 
     // Resolve screen if provided
@@ -43,6 +54,8 @@ export async function POST(req: NextRequest) {
     }
 
     const appUrl = process.env.APP_URL || "http://localhost:3000";
+
+    logger.payment("Creating Stripe checkout", { offerId, screenSlug, amount: offer.priceCents });
 
     // Create Stripe Checkout Session
     const session = await getStripe().checkout.sessions.create({
@@ -84,12 +97,13 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    logger.payment("Stripe checkout created", { sessionId: session.id, offerId });
+
     // Redirect to Stripe Checkout
     return NextResponse.redirect(session.url!, 303);
   } catch (error: unknown) {
-    console.error("Checkout error:", error);
-    const message =
-      error instanceof Error ? error.message : "internal error";
+    logger.error("Checkout error", error instanceof Error ? error : new Error(String(error)));
+    const message = error instanceof Error ? error.message : "internal error";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

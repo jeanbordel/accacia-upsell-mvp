@@ -12,7 +12,16 @@ export default async function OrdersPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">Comenzi</h1>
+      <div className="mb-6 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-gray-900">Comenzi</h1>
+        <a
+          href="/api/admin/export/orders"
+          className="rounded-lg bg-sky-600 px-4 py-2 text-sm text-white hover:bg-sky-700"
+          download
+        >
+          Export CSV
+        </a>
+      </div>
 
       {orders.length === 0 ? (
         <p className="text-gray-500">Nu există comenzi încă.</p>

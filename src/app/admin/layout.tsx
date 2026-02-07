@@ -32,6 +32,12 @@ export default async function AdminLayout({
           </span>
           <div className="flex gap-4 text-sm">
             <a
+              href="/admin/kpi"
+              className="text-sky-600 hover:underline"
+            >
+              KPIs
+            </a>
+            <a
               href="/admin/orders"
               className="text-sky-600 hover:underline"
             >
