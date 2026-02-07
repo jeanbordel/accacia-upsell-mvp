@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  NEW
+  PAID
+  FAILED
+}
+
+enum PaymentProvider {
+  STRIPE
+  NETOPIA
+}
+
+enum EventType {
+  QR_SCAN
+  PAYMENT_SUCCESS
+  PAYMENT_FAILED
+}
+
+model Hotel {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+
+  screens Screen[]
+  offers  Offer[]
+  orders  Order[]
+  events  Event[]
+}
+
+model Screen {
+  id        String   @id @default(cuid())
+  hotelId   String
+  name      String
+  qrSlug    String   @unique
+  createdAt DateTime @default(now())
+
+  hotel Hotel @relation(fields: [hotelId], references: [id])
+}
+
+model Offer {
+  id          String   @id @default(cuid())
+  hotelId     String
+  title       String
+  description String?
+  priceCents  Int
+  currency    String   @default("RON")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  hotel Hotel @relation(fields: [hotelId], references: [id])
+}
+
+model Order {
+  id          String          @id @default(cuid())
+  hotelId     String
+  screenId    String?
+  offerId     String?
+  status      OrderStatus     @default(NEW)
+  provider    PaymentProvider
+  providerRef String?
+  amountCents Int
+  currency    String
+  createdAt   DateTime        @default(now())
+
+  hotel Hotel @relation(fields: [hotelId], references: [id])
+}
+
+model Event {
+  id        String    @id @default(cuid())
+  hotelId   String
+  screenId  String?
+  offerId   String?
+  type      EventType
+  createdAt DateTime  @default(now())
+
+  hotel Hotel @relation(fields: [hotelId], references: [id])
+}
