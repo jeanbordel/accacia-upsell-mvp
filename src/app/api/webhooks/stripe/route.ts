@@ -57,7 +57,15 @@ export async function POST(req: NextRequest) {
 async function handleSessionCompleted(session: Stripe.Checkout.Session) {
   const order = await prisma.order.findFirst({
     where: { providerRef: session.id },
-    include: {
+    select: {
+      id: true,
+      hotelId: true,
+      screenId: true,
+      offerId: true,
+      status: true,
+      amountCents: true,
+      currency: true,
+      customerEmail: true,
       hotel: { select: { name: true } },
       offer: { select: { title: true, fulfillmentNotes: true } },
     },
