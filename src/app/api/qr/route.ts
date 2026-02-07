@@ -37,8 +37,8 @@ export async function GET(req: NextRequest) {
     },
   });
 
-  // Build redirect URL
-  const appUrl = process.env.APP_URL || "http://localhost:3000";
+  // Build redirect URL — prefer APP_URL, fall back to request origin
+  const appUrl = process.env.APP_URL || url.origin;
   const landingSlug = offerId || "default";
   const redirectUrl = `${appUrl}/o/${landingSlug}?s=${slug}`;
 
