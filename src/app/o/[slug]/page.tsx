@@ -13,6 +13,7 @@ export default async function OfferPage({ params, searchParams }: PageProps) {
   const { s: screenSlug } = await searchParams;
 
   let offer;
+  let hotel;
 
   if (slug === "default") {
     // Resolve active offer based on screen
@@ -21,8 +22,11 @@ export default async function OfferPage({ params, searchParams }: PageProps) {
     }
     const screen = await prisma.screen.findUnique({
       where: { qrSlug: screenSlug },
+      include: { hotel: true },
     });
     if (!screen) notFound();
+
+    hotel = screen.hotel;
 
     offer = await prisma.offer.findFirst({
       where: { hotelId: screen.hotelId, isActive: true },
@@ -32,10 +36,15 @@ export default async function OfferPage({ params, searchParams }: PageProps) {
     // slug is an offerId
     offer = await prisma.offer.findUnique({
       where: { id: slug },
+      include: { hotel: true },
     });
+    
+    if (offer) {
+      hotel = offer.hotel;
+    }
   }
 
-  if (!offer) notFound();
+  if (!offer || !hotel) notFound();
 
   // Resolve screen for event logging
   let screenId: string | undefined;
@@ -61,14 +70,34 @@ export default async function OfferPage({ params, searchParams }: PageProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-sky-50 to-white">
       <main className="mx-4 w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
-        <div className="mb-4 flex justify-center">
-          <Image 
-            src="/accacia-logo.svg" 
-            alt="ACCACIA" 
-            width={160} 
-            height={53}
-            priority
-          />
+        {/* Hotel Branding */}
+        <div className="mb-6 flex flex-col items-center gap-3">
+          {hotel.logoUrl ? (
+            <Image 
+              src={hotel.logoUrl} 
+              alt={hotel.name}
+              width={120}
+              height={120}
+              className="max-h-20 w-auto object-contain"
+            />
+          ) : (
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-sky-100 to-cyan-100">
+              <span className="text-3xl">🏨</span>
+            </div>
+          )}
+          <div className="text-center">
+            <div className="text-sm font-semibold text-gray-700">{hotel.name}</div>
+            <div className="flex items-center justify-center gap-1 text-xs text-gray-500">
+              <span>Powered by</span>
+              <Image 
+                src="/accacia-logo.svg" 
+                alt="ACCACIA" 
+                width={60}
+                height={20}
+                className="opacity-60"
+              />
+            </div>
+          </div>
         </div>
         
         <div className="mb-6 text-center">

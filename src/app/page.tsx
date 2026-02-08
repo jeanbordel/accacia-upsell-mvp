@@ -118,7 +118,7 @@ export default function Home() {
                   Get Started →
                 </Link>
                 <Link
-                  href="#demo"
+                  href="/demo/bacolux-board"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/20 bg-white/5 px-8 py-4 text-lg font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
                 >
                   See Demo

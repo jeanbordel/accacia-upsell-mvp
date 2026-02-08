@@ -58,6 +58,12 @@ export default async function AdminLayout({
               Oferte
             </a>
             <a
+              href="/admin/hotels"
+              className="text-sky-600 hover:underline"
+            >
+              Hotels
+            </a>
+            <a
               href="/admin/payments"
               className="text-sky-600 hover:underline"
             >

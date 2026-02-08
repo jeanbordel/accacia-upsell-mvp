@@ -34,6 +34,7 @@ enum PaymentOwner {
 model Hotel {
   id        String   @id @default(cuid())
   name      String
+  logoUrl   String?  // Path to hotel logo (e.g., /logos/koralio.svg)
   createdAt DateTime @default(now())
 
   screens       Screen[]

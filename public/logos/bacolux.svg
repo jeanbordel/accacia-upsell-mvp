@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#E91E63"/>
+  <text x="50%" y="35%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial, sans-serif">
+    Bacolux
+  </text>
+  <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Arial, sans-serif">
+    Hotels
+  </text>
+  <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="42" font-weight="300" font-family="cursive" style="font-style: italic;">
+    Bach
+  </text>
+</svg>
