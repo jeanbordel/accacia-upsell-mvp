@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { getStripeForHotel } from "@/lib/stripe";
 import { logger } from "@/lib/logger";
 import { buildPaymentXml, encryptForNetopia, getNetopiaConfigForHotel } from "@/lib/netopia";
+import { rateLimit, getClientIdentifier, RATE_LIMITS } from "@/lib/rateLimit";
 
 /**
  * POST /api/checkout
@@ -10,6 +11,25 @@ import { buildPaymentXml, encryptForNetopia, getNetopiaConfigForHotel } from "@/
  * Creates a payment session using the hotel's configured payment provider.
  */
 export async function POST(req: NextRequest) {
+  // Rate limiting
+  const identifier = getClientIdentifier(req);
+  const rateLimitResult = rateLimit(identifier, RATE_LIMITS.checkout.limit, RATE_LIMITS.checkout.windowMs);
+
+  if (!rateLimitResult.success) {
+    logger.warn("Checkout rate limit exceeded", { identifier });
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { 
+        status: 429,
+        headers: {
+          "X-RateLimit-Limit": rateLimitResult.limit.toString(),
+          "X-RateLimit-Remaining": "0",
+          "X-RateLimit-Reset": new Date(rateLimitResult.reset).toISOString(),
+        },
+      }
+    );
+  }
+
   try {
     // Support both form data and JSON
     let offerId: string | null = null;

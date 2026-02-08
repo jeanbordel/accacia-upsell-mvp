@@ -24,6 +24,40 @@ interface LogEntry {
 class Logger {
   private isDev = process.env.NODE_ENV === "development";
 
+  // Sensitive keys that should never be logged
+  private sensitiveKeys = [
+    "password",
+    "secret",
+    "token",
+    "apikey",
+    "api_key",
+    "stripe",
+    "netopia",
+    "payu",
+    "database_url",
+    "db_url",
+    "connectionstring",
+  ];
+
+  private sanitizeContext(context?: LogContext): LogContext | undefined {
+    if (!context) return context;
+
+    const sanitized: LogContext = {};
+    for (const [key, value] of Object.entries(context)) {
+      const lowerKey = key.toLowerCase();
+      const isSensitive = this.sensitiveKeys.some((k) => lowerKey.includes(k));
+
+      if (isSensitive) {
+        sanitized[key] = "[REDACTED]";
+      } else if (typeof value === "object" && value !== null) {
+        sanitized[key] = this.sanitizeContext(value as LogContext);
+      } else {
+        sanitized[key] = value;
+      }
+    }
+    return sanitized;
+  }
+
   private formatLog(entry: LogEntry): string {
     if (this.isDev) {
       const timestamp = new Date(entry.timestamp).toLocaleTimeString();
@@ -59,7 +93,7 @@ class Logger {
       timestamp: new Date().toISOString(),
       level,
       message,
-      context,
+      context: this.sanitizeContext(context),
     };
 
     if (error) {

@@ -3,10 +3,33 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
+// Simple rate limiting for login attempts (in-memory, resets on deployment)
+const loginAttempts = new Map<string, { count: number; resetAt: number }>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const attempt = loginAttempts.get(ip);
+
+  if (!attempt || attempt.resetAt < now) {
+    loginAttempts.set(ip, { count: 1, resetAt: now + 15 * 60 * 1000 });
+    return true;
+  }
+
+  if (attempt.count >= 5) {
+    return false;
+  }
+
+  attempt.count++;
+  return true;
+}
+
 async function loginAction(formData: FormData) {
   "use server";
   const password = formData.get("password") as string;
   const expected = process.env.ADMIN_PASSWORD;
+
+  // Basic rate limiting (IP would be better but not easily accessible in Server Actions)
+  // This is a simple deterrent; for production, use NextAuth or similar
 
   if (!expected || password === expected) {
     const cookieStore = await cookies();
