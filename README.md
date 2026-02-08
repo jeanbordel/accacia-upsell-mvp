@@ -257,26 +257,93 @@ npx next build
 
 ## 🚢 Production Deployment
 
-### Vercel Deployment
-1. Push to GitHub
-2. Connect to Vercel
-3. Set environment variables in Vercel dashboard
-4. Configure PostgreSQL (e.g., Neon, Supabase, or managed Postgres)
-5. Run migrations: `npx prisma migrate deploy`
+**Production URL**: https://upsell.horecadepo.com  
+**Database**: Neon Postgres (Frankfurt, EU Central)  
+**Hosting**: Vercel (auto-deploy from `main` branch)
+
+### Quick Deployment Guide
+
+For a **complete release process**, see [RELEASE.md](../../RELEASE.md) in the repo root.
+
+#### 1. Pre-Deployment Checks
+```bash
+# Check for pending migrations
+./scripts/check-migrations.sh
+
+# Build locally to catch errors
+npm run build
+```
+
+#### 2. Deploy Code
+```bash
+git push origin main
+```
+Vercel automatically deploys on push to `main`.
+
+#### 3. Apply Database Migrations (if needed)
+```bash
+export DATABASE_URL="postgresql://[neon-string]?sslmode=require"
+./scripts/migrate-neon.sh
+```
+
+⚠️ **Apply migrations BEFORE the new code goes live** if they add required fields.
+
+#### 4. Smoke Tests
+```bash
+export APP_URL="https://upsell.horecadepo.com"
+./scripts/smoke.sh
+```
+
+Or test manually:
+- Health: https://upsell.horecadepo.com/api/health
+- Version: https://upsell.horecadepo.com/api/version
+- Demo: https://upsell.horecadepo.com/demo/bacolux-board
+
+### Deployment Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/check-migrations.sh` | Detect schema/migration changes |
+| `scripts/migrate-neon.sh` | Apply migrations to Neon production DB |
+| `scripts/smoke.sh` | Run smoke tests against production |
 
 ### Environment Variables (Production)
-Update these for production:
-- `APP_URL`: Your production domain
-- `DATABASE_URL`: Production database connection string
-- `NETOPIA_TEST_MODE="false"`: Use live Netopia endpoint
-- `NETOPIA_PRIVATE_KEY_PEM` / `NETOPIA_PUBLIC_KEY_PEM`: Real keys
-- `STRIPE_SECRET_KEY`: Live Stripe key
+
+See [scripts/vercel-env-audit.md](scripts/vercel-env-audit.md) for complete list.
+
+**Critical variables:**
+- `DATABASE_URL`: Neon connection string with `?sslmode=require`
+- `APP_URL`: `https://upsell.horecadepo.com`
+- `ADMIN_PASSWORD`: Strong password for admin access
+- `STRIPE_SECRET_KEY`: Live Stripe key (`sk_live_...`)
 - `STRIPE_WEBHOOK_SECRET`: Production webhook secret
+- `NETOPIA_*`: Live Netopia credentials and URLs
+
+**Set in**: Vercel Dashboard → Settings → Environment Variables → Production
+
+### API Endpoints for Monitoring
+
+| Endpoint | Purpose | Response |
+|----------|---------|----------|
+| `/api/health` | Database connectivity check | `{"status":"healthy","database":"connected"}` |
+| `/api/version` | Build and git commit info | `{"gitCommit":"abc123","buildId":"dpl_xyz"}` |
 
 ### Webhook URLs
 Configure these in payment provider dashboards:
-- **Stripe**: `https://yourdomain.com/api/webhooks/stripe`
-- **Netopia**: `https://yourdomain.com/api/webhooks/netopia`
+- **Stripe**: `https://upsell.horecadepo.com/api/webhooks/stripe`
+- **Netopia**: `https://upsell.horecadepo.com/api/webhooks/netopia`
+
+### Rollback Procedure
+
+**Code rollback:**
+1. Go to Vercel Dashboard → Deployments
+2. Find last working deployment
+3. Click ⋯ → "Promote to Production"
+
+**Database rollback:**
+- Prisma migrations are forward-only
+- Create corrective migration if needed
+- See [RELEASE.md](../../RELEASE.md) for details
 
 ---
 
