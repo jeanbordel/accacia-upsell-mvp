@@ -169,122 +169,182 @@ export default function Home() {
 
           {/* Screen Types Grid */}
           <div className="mb-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Lobby Display */}
+            {/* Indoor Wall Mounted */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-sky-500/50">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
                   <span className="mb-2 text-6xl">🖼️</span>
-                  <span className="text-sm text-gray-400">55" - 75" Display</span>
+                  <span className="text-sm text-gray-400">10" - 110" Range</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Lobby Display</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Wall Mounted Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Large format screens (55"-75") for high-traffic areas. Showcase premium offers, spa packages, dining experiences.
+                  Indoor wall-mounted screens (10"-110") for lobbies, reception, hallways. Ultra-flexible sizing for any hotel space.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">Portrait/Landscape</span>
-                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">4K Resolution</span>
+                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">10"-110"</span>
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Wall Mount</span>
                 </div>
               </div>
             </div>
 
-            {/* Elevator Screen */}
+            {/* Floor Standing */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-cyan-500/50">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🛗</span>
-                  <span className="text-sm text-gray-400">21.5" - 32" Vertical</span>
+                  <span className="mb-2 text-6xl">🏢</span>
+                  <span className="text-sm text-gray-400">43" - 98" Standing</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Elevator Screens</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Floor Standing Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Compact vertical displays (21.5"-32") for elevators. Perfect for time-limited messages and quick-scan QR offers.
+                  Large indoor standing displays (43"-98") for high-traffic areas. Perfect for lobbies, conference rooms, and event spaces.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Portrait Mode</span>
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Auto-Loop</span>
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">43"-98"</span>
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Freestanding</span>
                 </div>
               </div>
             </div>
 
-            {/* Reception Tablet */}
+            {/* Elevator Display */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-purple-500/50">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">📱</span>
-                  <span className="text-sm text-gray-400">10" - 15" Tablet</span>
+                  <span className="mb-2 text-6xl">🛗</span>
+                  <span className="text-sm text-gray-400">13.3" - 43" Vertical</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Reception Tablets</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Elevator Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Interactive tablets (10"-15") for reception desks. Staff-assisted upsells with instant QR generation.
+                  Specialized elevator screens (13.3"-43"). Available sizes: 13.3", 15.6", 18.5", 21.5", 23.6", 27", 32", 43". Compact vertical format.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Touch Enabled</span>
-                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Interactive</span>
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Vertical</span>
+                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Space-Saving</span>
                 </div>
               </div>
             </div>
 
-            {/* Hallway Displays */}
+            {/* A-Shape Display */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-green-500/50">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🚪</span>
-                  <span className="text-sm text-gray-400">32" - 43" Slim</span>
+                  <span className="mb-2 text-6xl">🅰️</span>
+                  <span className="text-sm text-gray-400">A-Shape Design</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Hallway Displays</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">A-Shape Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Slim profile screens (32"-43") for corridors. Guests see offers on their way to rooms, restaurants, or spa.
+                  Portable A-frame displays for entrances, sidewalks, or event spaces. Dual-sided screens for maximum visibility.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Slim Design</span>
-                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">Energy Efficient</span>
+                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Portable</span>
+                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">Double-Sided</span>
                 </div>
               </div>
             </div>
 
-            {/* Restaurant Menu Boards */}
+            {/* K-Shape Kiosk */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-orange-500/50">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🍽️</span>
-                  <span className="text-sm text-gray-400">43" - 55" Landscape</span>
+                  <span className="mb-2 text-6xl">🏪</span>
+                  <span className="text-sm text-gray-400">K-Shape Kiosk</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Restaurant Menu Boards</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">K-Shape Kiosks</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Digital menu boards (43"-55") for restaurants and bars. Upsell wine pairings, desserts, room service.
+                  Interactive kiosk stands for self-service areas. Touch-enabled displays for guest check-in, directory, or concierge services.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">Menu Display</span>
-                  <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-300">Dynamic Content</span>
+                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">Interactive</span>
+                  <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-300">Self-Service</span>
                 </div>
               </div>
             </div>
 
-            {/* Spa & Wellness */}
+            {/* Window Display */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-pink-500/50">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">💆</span>
-                  <span className="text-sm text-gray-400">32" - 55" Ambient</span>
+                  <span className="mb-2 text-6xl">🪟</span>
+                  <span className="text-sm text-gray-400">Rotatable Stand</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Spa & Wellness</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Window Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Ambient displays (32"-55") for spa areas. Promote massage packages, beauty treatments, wellness bundles.
+                  Window-mounted displays with rotatable or regular floor stands. Attract guests from outside with street-facing promotions.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-300">Relaxing Mode</span>
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Soft Lighting</span>
+                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-300">Window Mount</span>
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Rotatable</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Outdoor Displays */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-yellow-500/50">
+              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
+                  <span className="mb-2 text-6xl">🌤️</span>
+                  <span className="text-sm text-gray-400">Weatherproof</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Outdoor Displays</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Weatherproof outdoor screens (floor standing & wall mounted). High brightness for direct sunlight, waterproof housing.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-300">Waterproof</span>
+                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">High Brightness</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Whiteboard */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-blue-500/50">
+              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
+                  <span className="mb-2 text-6xl">✍️</span>
+                  <span className="text-sm text-gray-400">Touch & Collaborate</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Interactive Whiteboards</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Large touch-enabled displays for conference rooms and meeting spaces. Present offers to corporate groups or event planners.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-300">Touch Screen</span>
+                  <span className="rounded-full bg-indigo-500/20 px-3 py-1 text-xs text-indigo-300">Meetings</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Dual Display (Combo) */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-teal-500/50">
+              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
+                  <span className="mb-2 text-6xl">⚡</span>
+                  <span className="text-sm text-gray-400">18.5" + 10.1" Combo</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Dual Display Combo</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Combined displays (18.5" + 10.1") for elevators or tight spaces. Main content on large screen, QR code on secondary display.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-teal-500/20 px-3 py-1 text-xs text-teal-300">Dual Screen</span>
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Space Efficient</span>
                 </div>
               </div>
             </div>
