@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 async function loginAction(formData: FormData) {
@@ -30,37 +31,87 @@ export default async function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <form
-        action={loginAction}
-        className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg"
-      >
-        <div className="mb-6 flex justify-center">
-          <Image 
-            src="/accacia-logo.svg" 
-            alt="ACCACIA" 
-            width={180} 
-            height={60}
-            priority
-          />
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-sky-950 to-slate-900">
+      {/* Navigation */}
+      <nav className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <Link href="/">
+            <Image 
+              src="/accacia-logo.svg" 
+              alt="ACCACIA" 
+              width={140} 
+              height={40}
+              priority
+              className="h-auto w-32 brightness-0 invert"
+            />
+          </Link>
+          <Link
+            href="/"
+            className="text-sm text-gray-400 transition hover:text-white"
+          >
+            ← Back to Home
+          </Link>
         </div>
-        <h1 className="mb-6 text-center text-xl font-bold text-gray-900">
-          Admin Login
-        </h1>
-        <input
-          type="password"
-          name="password"
-          placeholder="Parolă"
-          required
-          className="mb-4 w-full rounded-lg border px-4 py-2 text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-        />
-        <button
-          type="submit"
-          className="w-full rounded-lg bg-sky-600 py-2 font-semibold text-white hover:bg-sky-700"
-        >
-          Intră
-        </button>
-      </form>
+      </nav>
+
+      {/* Login Form */}
+      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-6 py-12">
+        <div className="w-full max-w-md">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl">
+            <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-red-500/10 blur-3xl"></div>
+            
+            <div className="relative">
+              <div className="mb-6 flex items-center justify-center gap-2">
+                <span className="text-2xl">⚙️</span>
+                <h1 className="text-3xl font-bold text-white">Admin Access</h1>
+              </div>
+              
+              <p className="mb-8 text-center text-sm text-gray-400">
+                ACCACIA Internal Use Only
+              </p>
+
+              <form action={loginAction} className="space-y-6">
+                <div>
+                  <label htmlFor="password" className="mb-2 block text-sm font-medium text-gray-300">
+                    Admin Password
+                  </label>
+                  <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-gray-500 backdrop-blur-sm transition focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 font-semibold text-white shadow-lg shadow-red-600/50 transition hover:shadow-red-600/70"
+                >
+                  Sign In
+                </button>
+              </form>
+
+              <div className="mt-6 text-center">
+                <p className="text-xs text-gray-500">
+                  Looking for client login?{" "}
+                  <Link href="/client-login" className="text-sky-400 hover:text-sky-300">
+                    Click here
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Warning Note */}
+          <div className="mt-6 rounded-lg border border-red-500/20 bg-red-500/5 p-4 text-center backdrop-blur-sm">
+            <p className="text-xs text-red-400">
+              🔒 Authorized personnel only. All access is logged and monitored.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

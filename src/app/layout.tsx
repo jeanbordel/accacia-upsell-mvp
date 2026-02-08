@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ACCACIA Upsell - Hotel Digital Signage",
-  description: "QR-driven upsell platform for hotels. Scan, discover exclusive offers, and book instantly.",
+  title: "ACCACIA - Master of the Upsell Experience",
+  description: "Turn every guest interaction into revenue. QR-activated offers, instant bookings, real-time analytics. Hotels keep their payment providers, ACCACIA delivers the magic.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },

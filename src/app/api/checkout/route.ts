@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
       screenId = screen?.id;
     }
 
-    const appUrl = process.env.APP_URL || "http://localhost:3000";
+    const appUrl = process.env.APP_URL || "http://localhost:3001";
 
     logger.payment("Creating checkout", {
       offerId,
