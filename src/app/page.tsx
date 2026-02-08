@@ -169,12 +169,112 @@ export default function Home() {
 
           {/* Screen Types Grid */}
           <div className="mb-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Indoor Wall Mounted */}
+            {/* Totem Digital SLIM */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-sky-500/50">
               <div className="relative aspect-video overflow-hidden bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80"
-                  alt="Wall Mounted Digital Signage Display"
+                  src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=800&q=80"
+                  alt="Totem Digital SLIM Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  32"-65" Slim
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Totem Digital SLIM</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Elegant slim-profile totems (32"/43"/49"/55"/65"). FHD/UHD, 500-1000 nits, Android/Windows. Perfect for lobbies and retail.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">Slim Design</span>
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Touch Optional</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Totem Digital Rotativ */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-cyan-500/50">
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1607827448452-6fda561309b1?w=800&q=80"
+                  alt="Rotating Display Totem"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  Rotating Screen
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Totem Digital Rotativ</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Rotating screen totem for dynamic presentations. Portrait/landscape auto-switching. Ideal for high-traffic areas and events.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Auto-Rotate</span>
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Dual Orientation</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Poster Digital */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-purple-500/50">
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80"
+                  alt="Digital Poster Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  Ultra-Slim Poster
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Poster Digital</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Ultra-thin wall-mounted digital posters. Frameless design, high brightness. Perfect for elevators, hallways, and reception areas.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Ultra-Thin</span>
+                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Wall Mount</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Totem Digital Dublu */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-green-500/50">
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80"
+                  alt="Double Screen Digital Totem"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  Dual Display
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-white">Totem Digital Dublu</h3>
+                <p className="mb-4 text-sm text-gray-400">
+                  Double-sided totem with dual displays. Back-to-back screens for maximum visibility. Ideal for central lobby placements and wayfinding.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Double-Sided</span>
+                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">360° Visibility</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Indoor Wall Mounted (10-110") */}
+            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-orange-500/50">
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
+                  alt="Large Format Wall Display"
                   fill
                   className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
                 />
@@ -183,213 +283,113 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Wall Mounted Displays</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Large Format Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Indoor wall-mounted screens (10"-110") for lobbies, reception, hallways. Ultra-flexible sizing for any hotel space.
+                  Flexible wall-mounted displays (10"-110") for any space. Ultra-wide options for conference rooms, video walls, and immersive experiences.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">10"-110"</span>
-                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Wall Mount</span>
+                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">10"-110"</span>
+                  <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-300">Video Wall Ready</span>
                 </div>
               </div>
             </div>
 
-            {/* Floor Standing */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-cyan-500/50">
-              <div className="relative aspect-video overflow-hidden bg-slate-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-                  alt="Floor Standing Digital Display"
-                  fill
-                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  43" - 98" Standing
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Floor Standing Displays</h3>
-                <p className="mb-4 text-sm text-gray-400">
-                  Large indoor standing displays (43"-98") for high-traffic areas. Perfect for lobbies, conference rooms, and event spaces.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">43"-98"</span>
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Freestanding</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Elevator Display */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-purple-500/50">
-              <div className="relative aspect-video overflow-hidden bg-slate-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=800&q=80"
-                  alt="Elevator Digital Display"
-                  fill
-                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  13.3" - 43" Vertical
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Elevator Displays</h3>
-                <p className="mb-4 text-sm text-gray-400">
-                  Specialized elevator screens (13.3"-43"). Available sizes: 13.3", 15.6", 18.5", 21.5", 23.6", 27", 32", 43". Compact vertical format.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Vertical</span>
-                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Space-Saving</span>
-                </div>
-              </div>
-            </div>
-
-            {/* A-Shape Display */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-green-500/50">
-              <div className="relative aspect-video overflow-hidden bg-slate-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1556742208-999815fca738?w=800&q=80"
-                  alt="A-Frame Digital Signage"
-                  fill
-                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  A-Shape Design
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">A-Shape Displays</h3>
-                <p className="mb-4 text-sm text-gray-400">
-                  Portable A-frame displays for entrances, sidewalks, or event spaces. Dual-sided screens for maximum visibility.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-300">Portable</span>
-                  <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-300">Double-Sided</span>
-                </div>
-              </div>
-            </div>
-
-            {/* K-Shape Kiosk */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-orange-500/50">
-              <div className="relative aspect-video overflow-hidden bg-slate-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
-                  alt="Interactive Kiosk Display"
-                  fill
-                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
-                />
-                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  K-Shape Kiosk
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">K-Shape Kiosks</h3>
-                <p className="mb-4 text-sm text-gray-400">
-                  Interactive kiosk stands for self-service areas. Touch-enabled displays for guest check-in, directory, or concierge services.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">Interactive</span>
-                  <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-300">Self-Service</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Window Display */}
+            {/* Interactive Touch Kiosks */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-pink-500/50">
               <div className="relative aspect-video overflow-hidden bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80"
-                  alt="Window Display Signage"
+                  src="https://images.unsplash.com/photo-1588508065123-287b28e013da?w=800&q=80"
+                  alt="Interactive Touch Kiosk"
                   fill
                   className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  Rotatable Stand
+                  PCAP/IR Touch
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Window Displays</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Interactive Touch Kiosks</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Window-mounted displays with rotatable or regular floor stands. Attract guests from outside with street-facing promotions.
+                  Capacitive multi-touch (10 points) or IR touch. Anti-explosion tempered glass. Self-service check-in, wayfinding, concierge.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-300">Window Mount</span>
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Rotatable</span>
+                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-300">10-Point Touch</span>
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-300">Secure Glass</span>
                 </div>
               </div>
             </div>
 
-            {/* Outdoor Displays */}
+            {/* Outdoor Weatherproof */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-yellow-500/50">
               <div className="relative aspect-video overflow-hidden bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80"
-                  alt="Outdoor Weatherproof Digital Display"
+                  src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?w=800&q=80"
+                  alt="Outdoor Weatherproof Display"
                   fill
                   className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  Weatherproof
+                  1000+ Nits
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-white">Outdoor Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Weatherproof outdoor screens (floor standing & wall mounted). High brightness for direct sunlight, waterproof housing.
+                  High-brightness (1000+ nits), weatherproof housing, IP65 rated. Direct sunlight readable. For terraces, patios, and entrances.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-300">Waterproof</span>
-                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">High Brightness</span>
+                  <span className="rounded-full bg-yellow-500/20 px-3 py-1 text-xs text-yellow-300">IP65 Rated</span>
+                  <span className="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-300">Anti-Glare</span>
                 </div>
               </div>
             </div>
 
-            {/* Interactive Whiteboard */}
+            {/* Conference Displays */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-blue-500/50">
               <div className="relative aspect-video overflow-hidden bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                  alt="Interactive Touch Display Whiteboard"
+                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+                  alt="Interactive Conference Display"
                   fill
                   className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  Touch & Collaborate
+                  4K UHD
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Interactive Whiteboards</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Conference Room Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Large touch-enabled displays for conference rooms and meeting spaces. Present offers to corporate groups or event planners.
+                  4K UHD resolution, wide viewing angles (178°), HDMI/DisplayPort. Present upsell packages to corporate groups and event planners.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-300">Touch Screen</span>
-                  <span className="rounded-full bg-indigo-500/20 px-3 py-1 text-xs text-indigo-300">Meetings</span>
+                  <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs text-blue-300">4K UHD</span>
+                  <span className="rounded-full bg-indigo-500/20 px-3 py-1 text-xs text-indigo-300">178° Viewing</span>
                 </div>
               </div>
             </div>
 
-            {/* Dual Display (Combo) */}
+            {/* Elevator Compact */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-teal-500/50">
               <div className="relative aspect-video overflow-hidden bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-                  alt="Dual Screen Display System"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                  alt="Elevator Compact Display"
                   fill
                   className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
-                  18.5" + 10.1" Combo
+                  15"-32" Vertical
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-white">Dual Display Combo</h3>
+                <h3 className="mb-2 text-xl font-bold text-white">Elevator Displays</h3>
                 <p className="mb-4 text-sm text-gray-400">
-                  Combined displays (18.5" + 10.1") for elevators or tight spaces. Main content on large screen, QR code on secondary display.
+                  Compact vertical displays (15"-32") for elevators. Portrait orientation, loop content playback. Captive audience marketing.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-teal-500/20 px-3 py-1 text-xs text-teal-300">Dual Screen</span>
-                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Space Efficient</span>
+                  <span className="rounded-full bg-teal-500/20 px-3 py-1 text-xs text-teal-300">Portrait</span>
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">Auto-Loop</span>
                 </div>
               </div>
             </div>
