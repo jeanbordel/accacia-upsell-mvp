@@ -6,9 +6,16 @@
 
 ### Core Flow
 - **QR Scan → Offer Landing**: Guests scan QR codes placed in hotel areas (lobby, elevator, room)
-- **Dual Payment Options**: Stripe (international) + Netopia Hosted (Romanian cards) in **RON**
+- **Per-Hotel Payment Providers**: Each hotel connects their own Stripe/Netopia/PayU account
 - **Order Lifecycle**: NEW → PAID/FAILED → FULFILLED with webhook idempotency
 - **Event Tracking**: QR_SCAN, PAGE_VIEW, PAYMENT_SUCCESS, PAYMENT_FAILED
+
+### Payment Architecture (NEW - Feb 2026)
+- **ACCACIA does NOT handle money**: Hotels connect their own payment providers
+- **Multi-Provider Support**: Stripe, Netopia, PayU (coming soon)
+- **Admin Configuration**: `/admin/payments` UI for payment setup
+- **Provider Options**: Cards, Apple Pay, Google Pay (provider-dependent)
+- **See:** [Payment Architecture Migration Guide](../../docs/PAYMENT_ARCHITECTURE_MIGRATION.md)
 
 ### Business Intelligence
 - **KPI Dashboard** (`/admin/kpi`):
@@ -20,10 +27,17 @@
 
 ### Operational
 - **Fulfillment Notifications**: Email/WhatsApp hooks on paid orders (stub ready for integration)
-- **Admin Panel**: Orders, offers, KPIs with password gate
+- **Admin Panel**: Orders, offers, payments, KPIs with password gate
 - **Structured Logging**: JSON logs in production, pretty-print in dev
 - **Health Check**: `/api/health` for monitoring
 - **Error Handling**: Graceful failures with user-friendly messages
+
+---
+
+## 📚 Documentation
+
+- **[Payment Architecture Migration Guide](../../docs/PAYMENT_ARCHITECTURE_MIGRATION.md)** - Complete migration details
+- **[Quick Reference](../../docs/QUICK_REFERENCE.md)** - Commands, API endpoints, troubleshooting
 
 ---
 
@@ -31,7 +45,7 @@
 
 - **Framework**: Next.js 16.1.6 (App Router) + TypeScript
 - **Database**: Prisma 6.19.2 + PostgreSQL 16
-- **Payments**: Stripe SDK + Netopia Hosted Payment
+- **Payments**: Stripe SDK + Netopia Hosted Payment + PayU (coming soon)
 - **Styling**: Tailwind CSS v4
 - **Deployment**: Vercel-ready (no Node.js-specific APIs)
 

@@ -57,6 +57,12 @@ export default async function AdminLayout({
             >
               Oferte
             </a>
+            <a
+              href="/admin/payments"
+              className="text-sky-600 hover:underline"
+            >
+              Payments
+            </a>
             <form action="/admin/logout" method="POST">
               <button
                 type="submit"

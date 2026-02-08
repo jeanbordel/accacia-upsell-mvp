@@ -8,8 +8,9 @@
  */
 
 import crypto from "crypto";
+import { HotelPaymentConfig } from "@prisma/client";
 
-// ---------- ENV helpers ----------
+// ---------- ENV helpers (for backward compatibility) ----------
 
 export function getNetopiaConfig() {
   return {
@@ -28,6 +29,27 @@ export function getNetopiaConfig() {
       process.env.NETOPIA_RETURN_URL || "http://localhost:3000/o/success",
     privateKeyPem: process.env.NETOPIA_PRIVATE_KEY_PEM || "",
     publicKeyPem: process.env.NETOPIA_PUBLIC_KEY_PEM || "",
+  };
+}
+
+/**
+ * Get Netopia configuration from hotel payment config.
+ * Use this for per-hotel payment flows.
+ */
+export function getNetopiaConfigForHotel(config: HotelPaymentConfig) {
+  return {
+    signature: config.netopiaSignature || "",
+    isTest: config.netopiaTestMode,
+    hostedUrl:
+      config.netopiaTestMode
+        ? config.netopiaHostedUrlTest || "https://sandbox.netopia-payments.com/payment/card/start"
+        : config.netopiaHostedUrlLive || "https://secure.netopia-payments.com/payment/card/start",
+    notifyUrl:
+      process.env.NETOPIA_NOTIFY_URL || "http://localhost:3000/api/webhooks/netopia",
+    returnUrl:
+      process.env.NETOPIA_RETURN_URL || "http://localhost:3000/o/success",
+    privateKeyPem: config.netopiaPrivateKeyPem || "",
+    publicKeyPem: config.netopiaPublicKeyPem || "",
   };
 }
 

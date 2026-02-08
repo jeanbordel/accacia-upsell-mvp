@@ -17,6 +17,7 @@ enum OrderStatus {
 enum PaymentProvider {
   STRIPE
   NETOPIA
+  PAYU
 }
 
 enum EventType {
@@ -26,15 +27,20 @@ enum EventType {
   PAYMENT_FAILED
 }
 
+enum PaymentOwner {
+  HOTEL
+}
+
 model Hotel {
   id        String   @id @default(cuid())
   name      String
   createdAt DateTime @default(now())
 
-  screens Screen[]
-  offers  Offer[]
-  orders  Order[]
-  events  Event[]
+  screens       Screen[]
+  offers        Offer[]
+  orders        Order[]
+  events        Event[]
+  paymentConfig HotelPaymentConfig?
 }
 
 model Screen {
@@ -76,6 +82,7 @@ model Order {
   customerEmail    String?
   customerPhone    String?
   fulfillmentNotes String?         @db.Text
+  paymentOwner     PaymentOwner    @default(HOTEL)
   createdAt        DateTime        @default(now())
   updatedAt        DateTime        @default(now()) @updatedAt
 
@@ -97,4 +104,32 @@ model Event {
 
   hotel Hotel  @relation(fields: [hotelId], references: [id])
   order Order? @relation(fields: [orderId], references: [id])
+}
+
+model HotelPaymentConfig {
+  id            String   @id @default(cuid())
+  hotelId       String   @unique
+  defaultPsp    PaymentProvider? // Which provider is active/default
+  
+  // Stripe configuration (TODO: encrypt in production)
+  stripeSecret  String?
+  stripeWebhook String?  // Optional per-hotel webhook secret
+  
+  // Netopia configuration (TODO: encrypt in production)
+  netopiaSignature       String?
+  netopiaTestMode        Boolean @default(true)
+  netopiaHostedUrlTest   String?
+  netopiaHostedUrlLive   String?
+  netopiaPublicKeyPem    String?  @db.Text
+  netopiaPrivateKeyPem   String?  @db.Text // WARNING: Should be in env/vault
+  
+  // PayU configuration (placeholder for future implementation)
+  payuMerchantId String?
+  payuSecret     String?
+  payuEnv        String?  // "test" | "live"
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  hotel         Hotel    @relation(fields: [hotelId], references: [id])
 }
