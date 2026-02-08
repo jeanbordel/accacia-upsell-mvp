@@ -82,13 +82,13 @@ export default function BacoluxBoardDemo() {
               Multi-Unit Management Dashboard
             </p>
           </div>
-          <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-pink-600 p-4">
+          <div className="flex h-32 w-32 items-center justify-center rounded-2xl bg-white/10 p-6 backdrop-blur-sm">
             <Image
               src="/logos/bacolux.svg"
               alt="Bacolux Hotels"
-              width={80}
-              height={80}
-              className="brightness-0 invert"
+              width={100}
+              height={100}
+              className="h-auto w-full"
             />
           </div>
         </div>
@@ -131,13 +131,13 @@ export default function BacoluxBoardDemo() {
                 }}
               >
                 {/* Logo Header */}
-                <div className="flex h-32 items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-4">
+                <div className="flex h-32 items-center justify-center bg-white p-4">
                   <Image
                     src={unit.logoUrl}
                     alt={unit.name}
                     width={100}
                     height={100}
-                    className="max-h-24 w-auto object-contain brightness-0 invert"
+                    className="max-h-24 w-auto object-contain"
                   />
                 </div>
 
@@ -171,13 +171,13 @@ export default function BacoluxBoardDemo() {
           <div className="rounded-xl border border-pink-500/50 bg-white/10 p-8 backdrop-blur-sm">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-pink-500/20">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-white p-2">
                   <Image
                     src={selectedHotel.logoUrl}
                     alt={selectedHotel.name}
                     width={48}
                     height={48}
-                    className="brightness-0 invert"
+                    className="h-auto w-full object-contain"
                   />
                 </div>
                 <div>

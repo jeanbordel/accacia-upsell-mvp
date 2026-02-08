@@ -22,9 +22,9 @@ export default async function HotelsPage() {
       paymentConfig: {
         select: {
           defaultPsp: true,
-          stripeEnabled: true,
-          netopiaEnabled: true,
-          payuEnabled: true,
+          stripeSecret: true,
+          netopiaSignature: true,
+          payuMerchantId: true,
         }
       }
     },
@@ -105,17 +105,17 @@ export default async function HotelsPage() {
                       Payment Providers
                     </div>
                     <div className="flex gap-2">
-                      {hotel.paymentConfig.stripeEnabled && (
+                      {hotel.paymentConfig.stripeSecret && (
                         <span className="rounded-full bg-purple-100 px-2 py-1 text-xs font-medium text-purple-700">
                           Stripe
                         </span>
                       )}
-                      {hotel.paymentConfig.netopiaEnabled && (
+                      {hotel.paymentConfig.netopiaSignature && (
                         <span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700">
                           Netopia
                         </span>
                       )}
-                      {hotel.paymentConfig.payuEnabled && (
+                      {hotel.paymentConfig.payuMerchantId && (
                         <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700">
                           PayU
                         </span>
