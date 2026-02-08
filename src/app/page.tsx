@@ -171,10 +171,15 @@ export default function Home() {
           <div className="mb-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Indoor Wall Mounted */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-sky-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🖼️</span>
-                  <span className="text-sm text-gray-400">10" - 110" Range</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80"
+                  alt="Wall Mounted Digital Signage Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  10" - 110" Range
                 </div>
               </div>
               <div className="p-6">
@@ -191,10 +196,15 @@ export default function Home() {
 
             {/* Floor Standing */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-cyan-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🏢</span>
-                  <span className="text-sm text-gray-400">43" - 98" Standing</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                  alt="Floor Standing Digital Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  43" - 98" Standing
                 </div>
               </div>
               <div className="p-6">
@@ -211,10 +221,15 @@ export default function Home() {
 
             {/* Elevator Display */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-purple-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🛗</span>
-                  <span className="text-sm text-gray-400">13.3" - 43" Vertical</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=800&q=80"
+                  alt="Elevator Digital Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  13.3" - 43" Vertical
                 </div>
               </div>
               <div className="p-6">
@@ -231,10 +246,15 @@ export default function Home() {
 
             {/* A-Shape Display */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-green-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🅰️</span>
-                  <span className="text-sm text-gray-400">A-Shape Design</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1556742208-999815fca738?w=800&q=80"
+                  alt="A-Frame Digital Signage"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  A-Shape Design
                 </div>
               </div>
               <div className="p-6">
@@ -251,10 +271,15 @@ export default function Home() {
 
             {/* K-Shape Kiosk */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-orange-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🏪</span>
-                  <span className="text-sm text-gray-400">K-Shape Kiosk</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
+                  alt="Interactive Kiosk Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  K-Shape Kiosk
                 </div>
               </div>
               <div className="p-6">
@@ -271,10 +296,15 @@ export default function Home() {
 
             {/* Window Display */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-pink-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🪟</span>
-                  <span className="text-sm text-gray-400">Rotatable Stand</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80"
+                  alt="Window Display Signage"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  Rotatable Stand
                 </div>
               </div>
               <div className="p-6">
@@ -291,10 +321,15 @@ export default function Home() {
 
             {/* Outdoor Displays */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-yellow-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">🌤️</span>
-                  <span className="text-sm text-gray-400">Weatherproof</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80"
+                  alt="Outdoor Weatherproof Digital Display"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  Weatherproof
                 </div>
               </div>
               <div className="p-6">
@@ -311,10 +346,15 @@ export default function Home() {
 
             {/* Interactive Whiteboard */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-blue-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">✍️</span>
-                  <span className="text-sm text-gray-400">Touch & Collaborate</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                  alt="Interactive Touch Display Whiteboard"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  Touch & Collaborate
                 </div>
               </div>
               <div className="p-6">
@@ -331,10 +371,15 @@ export default function Home() {
 
             {/* Dual Display (Combo) */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition hover:border-teal-500/50">
-              <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 p-8">
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20">
-                  <span className="mb-2 text-6xl">⚡</span>
-                  <span className="text-sm text-gray-400">18.5" + 10.1" Combo</span>
+              <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                  alt="Dual Screen Display System"
+                  fill
+                  className="object-cover opacity-80 transition group-hover:scale-105 group-hover:opacity-100"
+                />
+                <div className="absolute bottom-2 right-2 rounded bg-black/70 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm">
+                  18.5" + 10.1" Combo
                 </div>
               </div>
               <div className="p-6">
