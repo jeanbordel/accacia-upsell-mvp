@@ -17,9 +17,10 @@ const ALLOWED_TYPES = ["image/svg+xml", "image/png", "image/jpeg", "image/webp"]
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { hotelId: string } }
+  { params }: { params: Promise<{ hotelId: string }> }
 ) {
   try {
+    const { hotelId } = await params;
     const formData = await req.formData();
     const file = formData.get("logo") as File;
 
@@ -45,7 +46,7 @@ export async function POST(
 
     // Get hotel to ensure it exists
     const hotel = await prisma.hotel.findUnique({
-      where: { id: params.hotelId },
+      where: { id: hotelId },
     });
 
     if (!hotel) {
@@ -71,7 +72,7 @@ export async function POST(
     // Update hotel with logo URL
     const logoUrl = `/logos/${filename}`;
     await prisma.hotel.update({
-      where: { id: params.hotelId },
+      where: { id: hotelId },
       data: { logoUrl },
     });
 
@@ -93,11 +94,12 @@ export async function POST(
 // Delete hotel logo
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { hotelId: string } }
+  { params }: { params: Promise<{ hotelId: string }> }
 ) {
   try {
+    const { hotelId } = await params;
     await prisma.hotel.update({
-      where: { id: params.hotelId },
+      where: { id: hotelId },
       data: { logoUrl: null },
     });
 

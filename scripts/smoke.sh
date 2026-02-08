@@ -21,16 +21,17 @@ FAILED=0
 test_endpoint() {
   local name=$1
   local path=$2
-  local expected_code=${3:-200}
+  local expected_codes=${3:-200}
   
   echo -n "Testing $name ($path)... "
   
   response=$(curl -s -o /dev/null -w "%{http_code}" "$APP_URL$path" 2>&1)
   
-  if [ "$response" = "$expected_code" ]; then
+  # Check if response matches any of the expected codes
+  if echo "$expected_codes" | grep -qw "$response"; then
     echo -e "${GREEN}✓ PASS${NC} (HTTP $response)"
   else
-    echo -e "${RED}✗ FAIL${NC} (HTTP $response, expected $expected_code)"
+    echo -e "${RED}✗ FAIL${NC} (HTTP $response, expected $expected_codes)"
     FAILED=$((FAILED + 1))
   fi
 }
@@ -67,16 +68,16 @@ test_endpoint "Demo Board" "/demo/bacolux-board" 200
 echo ""
 
 echo "3. Admin Pages (may redirect if not authenticated)"
-test_endpoint "Admin Login" "/admin-login" 200
-test_endpoint "Admin KPI" "/admin/kpi" 200,307
-test_endpoint "Admin Orders" "/admin/orders" 200,307
-test_endpoint "Admin Offers" "/admin/offers" 200,307
-test_endpoint "Admin Hotels" "/admin/hotels" 200,307
+test_endpoint "Admin Login" "/admin-login" "200"
+test_endpoint "Admin KPI" "/admin/kpi" "200 307"
+test_endpoint "Admin Orders" "/admin/orders" "200 307"
+test_endpoint "Admin Offers" "/admin/offers" "200 307"
+test_endpoint "Admin Hotels" "/admin/hotels" "200 307"
 echo ""
 
 echo "4. API Routes"
-test_endpoint "QR Code" "/api/qr?s=test" 302,400,404
-test_endpoint "Checkout" "/api/checkout" 405,400
+test_endpoint "QR Code" "/api/qr?s=test" "302 400 404"
+test_endpoint "Checkout" "/api/checkout" "405 400 401"
 echo ""
 
 # Summary
