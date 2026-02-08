@@ -611,6 +611,23 @@ export default function Home() {
               Contact Sales
             </a>
           </div>
+
+          {/* Demo Links */}
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-4 border-t border-white/10 pt-8">
+            <Link
+              href="/demo/bacolux-board"
+              className="inline-flex items-center gap-2 rounded-lg border border-purple-500/30 bg-purple-500/10 px-6 py-3 text-sm font-semibold text-purple-300 transition hover:border-purple-500/50 hover:bg-purple-500/20"
+            >
+              <span>🏨</span> View Bacolux Demo Board
+            </Link>
+            <Link
+              href="/admin-login"
+              className="inline-flex items-center gap-2 rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-500/50 hover:bg-cyan-500/20"
+            >
+              <span>📊</span> Admin KPI Dashboard
+            </Link>
+          </div>
+
           <p className="text-sm text-gray-400">
             Questions? Email us at <a href="mailto:sales@accacia.com" className="text-sky-400 underline">sales@accacia.com</a> or call +40 XXX XXX XXX
           </p>
