@@ -43,7 +43,7 @@ export default async function HotelsPage() {
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {hotels.map((hotel) => (
+          {hotels.map((hotel: any) => (
             <div
               key={hotel.id}
               className="overflow-hidden rounded-lg border bg-white shadow-sm transition hover:shadow-md"
