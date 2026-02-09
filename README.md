@@ -129,9 +129,9 @@ NETOPIA_PRIVATE_KEY_PEM=""  # TODO: Add real key
 NETOPIA_PUBLIC_KEY_PEM=""   # TODO: Add real key
 
 # Notifications (Optional)
-NOTIFICATION_EMAIL="hotel@example.com"
+NOTIFICATION_EMAIL="office@horecadepo.com"
 WHATSAPP_WEBHOOK_URL=""
-WHATSAPP_NOTIFICATION_PHONE=""
+WHATSAPP_NOTIFICATION_PHONE="+40745601215"
 ```
 
 ### Database Port

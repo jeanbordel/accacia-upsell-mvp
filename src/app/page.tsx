@@ -605,7 +605,7 @@ export default function Home() {
               Start Free Trial →
             </Link>
             <a
-              href="mailto:sales@accacia.com"
+              href="mailto:office@horecadepo.com"
               className="inline-flex items-center gap-2 rounded-xl border-2 border-white/20 bg-white/5 px-10 py-5 text-xl font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
             >
               Contact Sales
@@ -629,7 +629,7 @@ export default function Home() {
           </div>
 
           <p className="text-sm text-gray-400">
-            Questions? Email us at <a href="mailto:sales@accacia.com" className="text-sky-400 underline">sales@accacia.com</a> or call +40 XXX XXX XXX
+            Questions? Email us at <a href="mailto:office@horecadepo.com" className="text-sky-400 underline">office@horecadepo.com</a> or call +40745601215
           </p>
         </div>
       </section>
